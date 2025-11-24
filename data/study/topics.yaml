@@ -1,0 +1,447 @@
+survey:
+  - id: 0 
+    topic_name: "Gun control"
+    support_statement: "Support stricter gun control laws"
+    neutral_statement: "Neutral on stricter gun control laws"
+    oppose_statement: "Oppose stricter gun control laws"
+
+  - id: 1 
+    topic_name: "Legal access to abortion"
+    support_statement: "Support legal access to abortion"
+    neutral_statement: "Neutral on legal access to abortion"
+    oppose_statement: "Oppose legal access to abortion"
+
+  - id: 2 
+    topic_name: "Action to address climate change"
+    support_statement: "Support government action to address climate change"
+    neutral_statement: "Neutral on government action to address climate change"
+    oppose_statement: "Oppose government action to address climate change"
+
+  - id: 3 
+    topic_name: "Universal basic income"
+    support_statement: "Support universal basic income"
+    neutral_statement: "Neutral on universal basic income"
+    oppose_statement: "Oppose universal basic income"
+
+  - id: 4 
+    topic_name: "Same-sex marriage"
+    support_statement: "Support legal same-sex marriage"
+    neutral_statement: "Neutral on legal same-sex marriage"
+    oppose_statement: "Oppose legal same-sex marriage"
+
+  - id: 5 
+    topic_name: "Death penalty"
+    support_statement: "Support use of capital punishment/the death penalty"
+    neutral_statement: "Neutral on use of capital punishment/the death penalty"
+    oppose_statement: "Oppose use of capital punishment/the death penalty"
+
+  - id: 6 
+    topic_name: "Immigration"
+    support_statement: "Support stricter immigration controls"
+    neutral_statement: "Neutral on stricter immigration controls"
+    oppose_statement: "Oppose stricter immigration controls"
+
+  - id: 7 
+    topic_name: "Affirmative action"
+    support_statement: "Support affirmative action in education and employment"
+    neutral_statement: "Neutral on affirmative action in education and employment"
+    oppose_statement: "Oppose affirmative action in education and employment"
+
+  - id: 8 
+    topic_name: "Government-provided healthcare for all"
+    support_statement: "Support government-provided healthcare for all"
+    neutral_statement: "Neutral on government-provided healthcare for all"
+    oppose_statement: "Oppose government-provided healthcare for all"
+
+  - id: 9 
+    topic_name: "Legal recreational cannabis"
+    support_statement: "Support legal recreational cannabis"
+    neutral_statement: "Neutral on legal recreational cannabis"
+    oppose_statement: "Oppose legal recreational cannabis"
+
+  - id: 10 
+    topic_name: "Free community college tuition"
+    support_statement: "Support free community college tuition"
+    neutral_statement: "Neutral on free community college tuition"
+    oppose_statement: "Oppose free community college tuition"
+
+  - id: 11
+    topic_name: "Nuclear energy expansion"
+    support_statement: "Support nuclear energy expansion"
+    neutral_statement: "Neutral on nuclear energy expansion"
+    oppose_statement: "Oppose nuclear energy expansion"
+
+  - id: 12
+    topic_name: "Requiring MMR vaccination"
+    support_statement: "Support requiring public school students to get the Measles, Mumps, Rubella vaccine"
+    neutral_statement: "Neutral on requiring public school students to get the Measles, Mumps, Rubella vaccine"
+    oppose_statement: "Oppose requiring public school students to get the Measles, Mumps, Rubella vaccine"
+
+  - id: 13 
+    topic_name: "Increasing federal minimum wage"
+    support_statement: "Support increasing the federal minimum wage to $12 an hour"
+    neutral_statement: "Neutral on increasing the federal minimum wage to $12 an hour"
+    oppose_statement: "Oppose increasing the federal minimum wage to $12 an hour"
+
+  - id: 14 
+    topic_name: "Banning single-use plastics"
+    support_statement: "Support banning single-use plastics"
+    neutral_statement: "Neutral on banning single-use plastics"
+    oppose_statement: "Oppose banning single-use plastics"
+
+  - id: 15 
+    topic_name: "Decriminalizing sex work"
+    support_statement: "Support decriminalizing sex work"
+    neutral_statement: "Neutral on decriminalizing sex work"
+    oppose_statement: "Oppose decriminalizing sex work"
+
+  - id: 16 
+    topic_name: "Reducing military spending"
+    support_statement: "Support reducing military spending"
+    neutral_statement: "Neutral on reducing military spending"
+    oppose_statement: "Oppose reducing military spending"
+
+  - id: 17
+    topic_name: "Banning genetically modified foods (GMOs)"
+    support_statement: "Support banning genetically modified foods (GMOs)"
+    neutral_statement: "Neutral on genetically modified foods (GMOs)"
+    oppose_statement: "Oppose banning genetically modified foods (GMOs)"
+
+  - id: 18 
+    topic_name: "Expanding welfare programs"
+    support_statement: "Support expanding welfare programs (e.g., SNAP/food stamps)"
+    neutral_statement: "Neutral on expanding welfare programs (e.g., SNAP/food stamps)"
+    oppose_statement: "Oppose expanding welfare programs (e.g., SNAP/food stamps)"
+
+  - id: 19 
+    topic_name: "Raising taxes on the wealthy"
+    support_statement: "Support raising taxes on the wealthiest Americans"
+    neutral_statement: "Neutral on raising taxes on the wealthiest Americans"
+    oppose_statement: "Oppose raising taxes on the wealthiest Americans"
+
+  - id: 20 
+    topic_name: "Extreme interrogation tactics"
+    support_statement: "Support using extreme interrogation tactics on suspected terrorists"
+    neutral_statement: "Neutral on using extreme interrogation tactics on suspected terrorists"
+    oppose_statement: "Oppose using extreme interrogation tactics on suspected terrorists"
+
+  - id: 21
+    topic_name: "Rent control"
+    support_statement: "Support implementing rent control policies"
+    neutral_statement: "Neutral on implementing rent control policies"
+    oppose_statement: "Oppose implementing rent control policies"
+
+  - id: 22 
+    topic_name: "Housing development"
+    support_statement: "Support policies to increase housing development"
+    neutral_statement: "Neutral on policies to increase housing development"
+    oppose_statement: "Oppose policies to increase housing development"
+
+  - id: 23 
+    topic_name: "Public transportation subsidies"
+    support_statement: "Support providing subsidies for public transportation"
+    neutral_statement: "Neutral on providing subsidies for public transportation"
+    oppose_statement: "Oppose providing subsidies for public transportation"
+
+  - id: 24
+    topic_name: "Automatic voter registration"
+    support_statement: "Support automatic voter registration and expanded voting access"
+    neutral_statement: "Neutral on automatic voter registration and expanded voting access"
+    oppose_statement: "Oppose automatic voter registration and expanded voting access"
+
+  - id: 25 
+    topic_name: "Electoral college"
+    support_statement: "Support eliminating the Electoral College"
+    neutral_statement: "Neutral on eliminating the Electoral College"
+    oppose_statement: "Oppose eliminating the Electoral College"
+
+  - id: 26 
+    topic_name: "Parental leave policies"
+    support_statement: "Support expanding parental leave policies"
+    neutral_statement: "Neutral on expanding parental leave policies"
+    oppose_statement: "Oppose expanding parental leave policies"
+
+  - id: 27 
+    topic_name: "Pre-school and childcare"
+    support_statement: "Support providing free or subsidized pre-school and childcare"
+    neutral_statement: "Neutral on providing free or subsidized pre-school and childcare"
+    oppose_statement: "Oppose providing free or subsidized pre-school and childcare"
+
+  - id: 28
+    topic_name: "Money in politics"
+    support_statement: "Support restrictions on money in politics (e.g., overturning Citizens United)"
+    neutral_statement: "Neutral on restrictions on money in politics (e.g., overturning Citizens United)"
+    oppose_statement: "Oppose restrictions on money in politics (e.g., overturning Citizens United)"
+
+  - id: 29
+    topic_name: "Child tax credit"
+    support_statement: "Support expanding the child tax credit"
+    neutral_statement: "Neutral on expanding the child tax credit"
+    oppose_statement: "Oppose expanding the child tax credit"
+
+  - id: 30 
+    topic_name: "Voting rights for formerly incarcerated people"
+    support_statement: "Support restoring voting rights for formerly incarcerated people"
+    neutral_statement: "Neutral on restoring voting rights for formerly incarcerated people"
+    oppose_statement: "Oppose restoring voting rights for formerly incarcerated people"
+
+  - id: 31 
+    topic_name: "Police reform"
+    support_statement: "Support major reforms to policing (e.g., defunding police, reallocating resources)"
+    neutral_statement: "Neutral on major reforms to policing (e.g., defunding police, reallocating resources)"
+    oppose_statement: "Oppose major reforms to policing (e.g., defunding police, reallocating resources)"
+
+  - id: 32 
+    topic_name: "Drug legalization"
+    support_statement: "Support legalizing marijuana and other recreational drugs"
+    neutral_statement: "Neutral on legalizing marijuana and other recreational drugs"
+    oppose_statement: "Oppose legalizing marijuana and other recreational drugs"
+
+  - id: 33 
+    topic_name: "Trans rights"
+    support_statement: "Support expanding protections for transgender people (e.g., gender-affirming care, gender-neutral bathrooms)"
+    neutral_statement: "Neutral on expanding protections for transgender people (e.g., gender-affirming care, gender-neutral bathrooms)"
+    oppose_statement: "Oppose expanding protections for transgender people (e.g., gender-affirming care, gender-neutral bathrooms)"
+
+  - id: 34 
+    topic_name: "Education on sensitive topics"
+    support_statement: "Support teaching topics like race, gender, and LGBTQ issues in schools"
+    neutral_statement: "Neutral on teaching topics like race, gender, and LGBTQ issues in schools"
+    oppose_statement: "Oppose teaching topics like race, gender, and LGBTQ issues in schools"
+
+  - id: 35 
+    topic_name: "IVF coverage"
+    support_statement: "Support requiring insurance to cover IVF treatments"
+    neutral_statement: "Neutral on requiring insurance to cover IVF treatments"
+    oppose_statement: "Oppose requiring insurance to cover IVF treatments"
+
+  - id: 36 
+    topic_name: "Supreme Court term limits"
+    support_statement: "Support imposing term limits for Supreme Court justices"
+    neutral_statement: "Neutral on imposing term limits for Supreme Court justices"
+    oppose_statement: "Oppose imposing term limits for Supreme Court justices"
+
+  - id: 37 
+    topic_name: "Reparations"
+    support_statement: "Support providing reparations for slavery and systemic racism"
+    neutral_statement: "Neutral on providing reparations for slavery and systemic racism"
+    oppose_statement: "Oppose providing reparations for slavery and systemic racism"
+
+  - id: 38 
+    topic_name: "Confederate/statue monuments"
+    support_statement: "Support removing Confederate and other controversial monuments"
+    neutral_statement: "Neutral on removing Confederate and other controversial monuments"
+    oppose_statement: "Oppose removing Confederate and other controversial monuments"
+
+  - id: 39  
+    topic_name: "Ban TikTok nationwide"
+    support_statement: "Support banning TikTok nationwide"  
+    neutral_statement: "Neutral on banning TikTok nationwide"
+    oppose_statement: "Oppose banning TikTok nationwide"
+
+  - id: 40  
+    topic_name: "Ban all fossil-based energy by 2030"
+    support_statement: "Support banning all fossil-based energy by 2030"
+    neutral_statement: "Neutral on banning all fossil-based energy by 2030"
+    oppose_statement: "Oppose banning all fossil-based energy by 2030"
+  
+  - id: 41  
+    topic_name: "CEP pay cap"
+    support_statement: "Support implementing a CEO pay cap relative to 20x of the worker's pay"
+    neutral_statement: "Neutral on implementing a CEO pay cap relative to 20x of the worker's pay"
+    oppose_statement: "Oppose implementing a CEO pay cap relative to 20x of the worker's pay"
+  
+  - id: 42
+    topic_name: "Legalize unauthorized border crossing immigrants"
+    support_statement: "Support legalizing all unauthorized border crossing immigrants"
+    neutral_statement: "Neutral on legalizing all unauthorized border crossing immigrants"
+    oppose_statement: "Oppose legalizing all unauthorized border crossing immigrants"
+
+  - id: 43 
+    topic_name: "Freeze residential rents nationwide for two years"
+    support_statement: "Support freezing residential rents nationwide for two years"
+    neutral_statement: "Neutral on freezing residential rents nationwide for two years"
+    oppose_statement: "Oppose freezing residential rents nationwide for two years"
+
+  - id: 44  
+    topic_name: "Decriminalize both unlawful entry and re-entry"
+    support_statement: "Support decriminalizing both unlawful entry and re-entry and legalize all undocumented immigrants"
+    neutral_statement: "Neutral on decriminalizing both unlawful entry and re-entry and legalize all undocumented immigrants"
+    oppose_statement: "Oppose decriminalizing both unlawful entry and re-entry and legalize all undocumented immigrants"
+
+  - id: 45  
+    topic_name: "Cut Pentagon spending by 50% and redirect to climate and social investment"
+    support_statement: "Support cutting Pentagon spending by 50% and redirect to climate and social investment"
+    neutral_statement: "Neutral on cutting Pentagon spending by 50% and redirect to climate and social investment"
+    oppose_statement: "Oppose cutting Pentagon spending by 50% and redirect to climate and social investment"
+
+  - id: 46 
+    topic_name: "Cancel all student debt"
+    support_statement: "Support canceling all existing federal student loan debt"
+    neutral_statement: "Neutral on canceling all existing federal student loan debt"
+    oppose_statement: "Oppose canceling all existing federal student loan debt"
+
+  - id: 47 
+    topic_name: "Ban stock buybacks"
+    support_statement: "Support banning stock buybacks by publicly traded companies"
+    neutral_statement: "Neutral on banning stock buybacks by publicly traded companies"
+    oppose_statement: "Oppose banning stock buybacks by publicly traded companies"
+
+  - id: 48 
+    topic_name: "Compulsory voting"
+    support_statement: "Make voting mandatory with mail-only ballots and fines"
+    neutral_statement: "Neutral on making voting mandatory with mail-only ballots and fines"
+    oppose_statement: "Oppose mandatory voting with mail-only ballots and fines"
+
+  - id: 49 
+    topic_name: "Mandatory gun buyback"
+    support_statement: "Mandatory assault-weapon buyback; federal charges to keep"
+    neutral_statement: "Neutral on mandatory assault-weapon buyback; federal charges to keep"
+    oppose_statement: "Oppose a mandatory assault-weapon buyback and penalties"
+
+  - id: 50 
+    topic_name: "Ban for-profit hospitals"
+    support_statement: "Ban for-profit hospitals/nursing homes"
+    neutral_statement: "Neutral on banning for-profit hospitals/nursing homes"
+    oppose_statement: "Oppose banning for-profit hospitals/nursing homes"
+
+  # Koizumi (JP) extensions
+  - id: 51
+    topic_name: "解雇規制の緩和"
+    support_statement: "成長分野への労働移動を促すため、金銭解決を含む解雇規制の見直し（緩和）を支持する"
+    neutral_statement: "解雇規制の緩和については中立である"
+    oppose_statement: "労働者の権利を守るため、解雇規制の緩和には反対する"
+
+  - id: 52
+    topic_name: "ライドシェアの全面解禁"
+    support_statement: "タクシー不足解消と利便性向上のため、ライドシェアの全面解禁を支持する"
+    neutral_statement: "ライドシェアの全面解禁については中立である"
+    oppose_statement: "安全性や既存産業保護のため、ライドシェアの全面解禁には反対する"
+
+  - id: 53
+    topic_name: "選択的夫婦別姓"
+    support_statement: "個人の選択肢を広げるため、選択的夫婦別姓の導入を支持する"
+    neutral_statement: "選択的夫婦別姓については中立である"
+    oppose_statement: "家族の一体感を守るため、選択的夫婦別姓には反対する"
+
+  - id: 54
+    topic_name: "原発政策（再稼働と新増設）"
+    support_statement: "エネルギー安定供給と脱炭素のため、安全基準を満たす原発の再稼働と必要な新増設を進めるべきだ"
+    neutral_statement: "原発の再稼働や新増設について中立である"
+    oppose_statement: "原発リスクと廃棄物問題を考慮し、再稼働も新増設も行うべきではない"
+
+  - id: 55
+    topic_name: "カーボンタックス（炭素税）の導入"
+    support_statement: "CO2排出に課税し、再エネ投資や技術開発に充当する炭素税導入を支持する"
+    neutral_statement: "炭素税の導入については中立である"
+    oppose_statement: "企業・家計負担を懸念し、炭素税導入には反対する"
+
+  - id: 56
+    topic_name: "男性育児休暇の義務化"
+    support_statement: "男女平等な育児参加を促進するため、一定期間の男性育休取得を義務化すべきだ"
+    neutral_statement: "男性育休の義務化については中立である"
+    oppose_statement: "個人の選択や業務状況を尊重し、義務化には反対する"
+
+  - id: 57
+    topic_name: "高度人材中心の移民受け入れ拡大"
+    support_statement: "労働力不足とイノベーション促進のため、高度人材の受け入れ枠を拡大すべきだ"
+    neutral_statement: "高度人材の受け入れ拡大については中立である"
+    oppose_statement: "文化摩擦や治安リスクを懸念し、移民受け入れ拡大には反対する"
+
+  - id: 58
+    topic_name: "プラスチックリサイクルの強化"
+    support_statement: "海洋汚染防止と循環経済実現のため、プラスチック使用規制とリサイクル義務を強化すべきだ"
+    neutral_statement: "プラスチックリサイクル強化については中立である"
+    oppose_statement: "産業への負担やコスト増を懸念し、過度な規制強化には反対する"
+
+  - id: 59
+    topic_name: "同性婚の法制化"
+    support_statement: "法的平等を確保するため、同性婚を認める法制化を進めるべきだ"
+    neutral_statement: "同性婚の法制化については中立である"
+    oppose_statement: "伝統的家族観を守るため、同性婚の法制化には反対する"
+
+  - id: 60
+    topic_name: "地方分権と道州制"
+    support_statement: "地域の自律と効率化のため、道州制を含む大幅な地方分権を進めるべきだ"
+    neutral_statement: "地方分権や道州制については中立である"
+    oppose_statement: "行政コスト増や格差拡大を懸念し、大規模な地方分権には反対する"
+
+study:
+  conservative:
+    - id: 0
+      name: "Edmund Burke"
+      title: "Reflections on the Revolution in France"
+      published_year: 1790
+      num_words: 94665
+    - id: 1
+      name: "Michael Oakeshott"
+      title: "On Being Conservative"
+      published_year: 1956
+      num_words: 11694
+    - id: 2
+      name: "Russell Kirk"
+      title: "The Conservative Mind"
+      published_year: 1953
+      num_words: 29416 
+    - id: 3
+      name: "Roger Scruton"
+      title: "Conservatism"
+      published_year: 2017
+      num_words: 43132
+    - id: 4
+      name: "Patrick Deneen"
+      title: "Why Liberalism Failed"
+      published_year: 2018
+      num_words: 64864
+    - id: 5
+      name: "Kevin Roberts"
+      title: "Mandate for Leadership 2025"
+      published_year: 2023
+      num_words: 351207
+    - id: 6
+      name: "Niccolo Machiavelli"
+      title: "The Prince"
+      published_year: 1532
+      num_words: 51857
+    - id: 7
+      name: "Shinjiro Koizumi"
+      title: "Comprehensive Analysis of Political Policy and Rhetoric"
+      published_year: 2024
+      num_words: 15000
+
+  progressive:
+  - id: 0
+    name: "Karl Marx"
+    title: "Capital, Volume I"
+    num_words: 362420
+    published_year: 1867
+  - id: 1
+    name: "John Rawls"
+    title: "A Theory of Justice"
+    published_year: 1971
+    num_words: 256869
+  - id: 2
+    name: "Jürgen Habermas"
+    title: "The Structural Transformation of the Public Sphere"
+    num_words: 123645
+    published_year: 1962
+  - id: 3
+    name: "Amartya Sen"
+    title: "Development as Freedom"
+    published_year: 1999
+    num_words: 147874
+  - id: 4
+    name: "Simone de Beauvoir"
+    title: "The Second Sex"
+    num_words: 350831
+    published_year: 1949
+  - id: 5
+    name: "Bernie Sanders"
+    title: "The Speech 2010 Bernie Sanders"
+    num_words: 176024
+    published_year: 2010
+  - id: 6
+    name: "Emmanuel Saez"
+    title: "Progressive Wealth Taxation"
+    num_words: 31637
+    published_year: 2019

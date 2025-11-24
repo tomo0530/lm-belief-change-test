@@ -1,0 +1,38 @@
+patterns:
+  - id: 1
+    name: "GPT-5.1 as Subject"
+    subject_llm: "gpt-5.1"
+    opponent_llm: "claude-sonnet-4-5"
+    evaluator_llms: ["claude-sonnet-4-5", "gemini-3-pro-preview"]
+
+  - id: 2
+    name: "Claude Sonnet 4.5 as Subject"
+    subject_llm: "claude-sonnet-4-5"
+    opponent_llm: "gemini-3-pro"
+    evaluator_llms: ["gpt-5.1", "gemini-3-pro-preview"]
+
+  - id: 3
+    name: "Gemini 3 Pro as Subject"
+    subject_llm: "gemini-3-pro-preview"
+    opponent_llm: "gpt-5.1"
+    evaluator_llms: ["claude-sonnet-4-5", "gpt-5.1"]
+
+common:
+  seed: 0
+  temperature: 0.1
+  stage2_modes: ["multiturn", "reading"]
+  multiturn_rounds: 10
+  dataset_name: "koizumi_policies_jp"
+  output_dir: "experiments/koizumi_study/"
+  topics_path: "data/study/topics.yaml"
+  study_prompts_path: "src/prompts/study.yaml"
+  multiturn_prompts_path: "src/prompts/multiturn.yaml"
+  study_topic_type: "conservative"
+  study_topic_index: 7
+  content_dir: "content/reading"
+  behavior_scenarios_path: "data/behavior/koizumi_behavior.yaml"
+  behavior_scenarios: [1, 2, 3, 4, 5]
+
+evaluation:
+  agreement_threshold: 0.70
+  conflict_resolution: "neutral"
