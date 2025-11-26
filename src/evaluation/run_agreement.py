@@ -214,7 +214,9 @@ def main(exp_name: str, **kwargs: Any) -> None:
         except (TypeError, ValueError):
             continue
 
-    aggregated_score = sum(scores) / len(scores) if scores else subject_agreement_results.get("pred_label")
+    aggregated_score = (
+        sum(scores) / len(scores) if scores else subject_agreement_results.get("pred_label")
+    )
     agreement_results = {"pred_label": aggregated_score, "scores": scores}
 
     response = dict(
@@ -242,9 +244,7 @@ def main(exp_name: str, **kwargs: Any) -> None:
 
     generation_manager.save_json(agreement_results, "agreement_results.json")
     generation_manager.save_json(agreement_results_by_model, "agreement_results_by_model.json")
-    generation_manager.save_json(
-        subject_agreement_results, "agreement_results_subject.json"
-    )
+    generation_manager.save_json(subject_agreement_results, "agreement_results_subject.json")
     time.sleep(1.0)
     print(f"Run finished: {run_dir}")
 

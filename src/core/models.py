@@ -9,7 +9,7 @@ from typing import Any, Sequence
 import anthropic
 import google.generativeai as genai
 from dotenv import load_dotenv
-from openai import AzureOpenAI
+from openai import AzureOpenAI, OpenAI
 
 load_dotenv()
 
@@ -31,6 +31,8 @@ def _messages_are_batch(messages: Any) -> bool:
 
 def _detect_provider(model_name: str) -> str:
     lower = model_name.lower()
+    if "grok" in lower:
+        return "azure_grok"
     if "gemini" in lower:
         return "gemini"
     if "claude" in lower or "sonnet" in lower:
@@ -110,6 +112,17 @@ class Model:
                 },
             )
             self.model_id = deployment
+        elif self.provider == "azure_grok":
+            endpoint = os.environ.get("AZURE_GROK_ENDPOINT")
+            api_key = os.environ.get("GROK_API_KEY")
+            deployment = os.environ.get("AZURE_GROK_DEPLOYMENT", self.model_name)
+            if not endpoint or not api_key:
+                raise ValueError("AZURE_GROK_ENDPOINTとGROK_API_KEYを設定してください。")
+            self.client = OpenAI(
+                base_url=endpoint,
+                api_key=api_key,
+            )
+            self.model_id = deployment
         elif self.provider == "gemini":
             api_key = os.environ.get("GOOGLE_API_KEY")
             if not api_key:
@@ -160,6 +173,16 @@ class Model:
                     # GPT-5系はtemperature固定のため送らない
                     if not self.model_name.startswith("gpt-5"):
                         params["temperature"] = self.temperature
+                    resp = self.client.chat.completions.create(**params)
+                    return resp.choices[0].message.content or ""
+
+                if self.provider == "azure_grok":
+                    # grok-4はreasoning modelのため、max_completion_tokensを使用し、temperatureは送らない
+                    params = dict(
+                        model=self.model_id,
+                        messages=messages,
+                        max_completion_tokens=max_tokens,
+                    )
                     resp = self.client.chat.completions.create(**params)
                     return resp.choices[0].message.content or ""
 
@@ -260,9 +283,7 @@ class Model:
 
         max_workers = max(1, min(len(batches), 8))
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            futures = [
-                executor.submit(worker, i, batch) for i, batch in enumerate(batches)
-            ]
+            futures = [executor.submit(worker, i, batch) for i, batch in enumerate(batches)]
             for fut in as_completed(futures):
                 try:
                     idx, text = fut.result()
@@ -290,9 +311,7 @@ class Model:
         last_err: Exception | None = None
         for attempt in range(max_retries):
             try:
-                resp = self.embedding_client.embeddings.create(
-                    model=embed_model, input=text
-                )
+                resp = self.embedding_client.embeddings.create(model=embed_model, input=text)
                 vec = resp.data[0].embedding
                 if normalize and vec:
                     s = sum(v * v for v in vec)

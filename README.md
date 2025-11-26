@@ -1,10 +1,10 @@
 # LM Belief Change - Koizumi Edition
 
-本リポジトリは「Accumulating Context Changes the Beliefs of Language Models」の実験フレームワークを、日本の政治コンテキスト（小泉進次郎）で再現するための環境です。GPT-5.1 / Claude Sonnet 4.5 / Gemini 3 Pro を対象に、Stage1/2/3の実験を一括実行できます。
+本リポジトリは「Accumulating Context Changes the Beliefs of Language Models」の実験フレームワークを、日本の政治コンテキスト（小泉進次郎）で再現するための環境です。GPT-5.1 / Claude Sonnet 4.5 / Grok-4 を対象に、Stage1/2/3の実験を一括実行できます。
 
 ## 前提環境
 - Python: 3.12（`uv`で管理）
-- `.env` にAPIキーを設定済み（Azure OpenAI / Azure Anthropic / Google GenAI）
+- `.env` にAPIキーを設定済み（Azure OpenAI / Azure Anthropic / Azure Grok）
 - 依存は `pyproject.toml` に定義
 
 `.env` の主要変数（例）:
@@ -19,8 +19,9 @@ AZURE_CLAUDE_DEPLOYMENT=claude-sonnet-4-5
 ANTHROPIC_API_KEY=***
 ANTHROPIC_VERSION=2023-06-01
 
-GOOGLE_API_KEY=***
-GEMINI_MODEL_NAME=gemini-3-pro-preview
+AZURE_GROK_ENDPOINT=https://<your-resource>.services.ai.azure.com/openai/v1/
+AZURE_GROK_DEPLOYMENT=grok-4
+GROK_API_KEY=***
 ```
 
 ## 実行方法

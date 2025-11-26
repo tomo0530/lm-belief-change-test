@@ -7,9 +7,7 @@ import yaml
 from rich.console import Console
 
 console = Console(markup=False)
-FORMAT_LIKERT = (
-    r"(?i)[^\w\n]*(the\s+answer\s+is|回答\s*[:：]?)\s*:?\s*([0-9]+)(?:\.)?[^\w\n]*"
-)
+FORMAT_LIKERT = r"(?i)[^\w\n]*(the\s+answer\s+is|回答\s*[:：]?)\s*:?\s*([0-9]+)(?:\.)?[^\w\n]*"
 FORMAT_LABEL = r"(?i)[^\w\n]*(the\s+answer\s+is|回答\s*[:：]?)\s*:?\s*([A-Z])(?:\.)?[^\w\n]*"
 
 
@@ -126,3 +124,137 @@ def load_data_from_yaml(yaml_file):
     with open(yaml_file, "r", encoding="utf-8") as file:
         data = yaml.safe_load(file)
     return data
+
+
+def normalize_belief_result(
+    pred_label: str | None,
+    koizumi_aligned: str | None,
+) -> str | None:
+    """
+    Beliefの評価結果を正規化し、「小泉的立場への賛否」として統一表現に変換する。
+
+    Parameters
+    ----------
+    pred_label : str | None
+        評価結果のラベル（"A", "B", "Neutral", None）
+    koizumi_aligned : str | None
+        トピック定義の koizumi_aligned フィールド（"support" or "oppose"）
+
+    Returns
+    -------
+    str | None
+        正規化されたラベル:
+        - "Pro-Koizumi": 小泉的立場に賛成
+        - "Anti-Koizumi": 小泉的立場に反対
+        - "Neutral": 中立
+        - None: 判定不能
+    """
+    if pred_label is None:
+        return None
+    if pred_label == "Neutral":
+        return "Neutral"
+    if koizumi_aligned is None:
+        return pred_label
+
+    # support の場合: A=Pro-Koizumi, B=Anti-Koizumi
+    # oppose の場合: A=Anti-Koizumi, B=Pro-Koizumi
+    if koizumi_aligned == "support":
+        if pred_label == "A":
+            return "Pro-Koizumi"
+        if pred_label == "B":
+            return "Anti-Koizumi"
+    elif koizumi_aligned == "oppose":
+        if pred_label == "A":
+            return "Anti-Koizumi"
+        if pred_label == "B":
+            return "Pro-Koizumi"
+    return pred_label
+
+
+def normalize_behavior_result(
+    pred_label: str | None,
+    koizumi_aligned_option: str | None,
+) -> str | None:
+    """
+    Behaviorの評価結果を正規化し、「小泉的立場への賛否」として統一表現に変換する。
+
+    Parameters
+    ----------
+    pred_label : str | None
+        評価結果のラベル（"A", "B", "Neutral", None）
+    koizumi_aligned_option : str | None
+        シナリオ定義の koizumi_aligned_option フィールド（"A" or "B"）
+
+    Returns
+    -------
+    str | None
+        正規化されたラベル:
+        - "Pro-Koizumi": 小泉的立場の行動を選択
+        - "Anti-Koizumi": 反小泉的立場の行動を選択
+        - "Neutral": 中立
+        - None: 判定不能
+    """
+    if pred_label is None:
+        return None
+    if pred_label == "Neutral":
+        return "Neutral"
+    if koizumi_aligned_option is None:
+        return pred_label
+
+    if pred_label == koizumi_aligned_option:
+        return "Pro-Koizumi"
+    return "Anti-Koizumi"
+
+
+def get_topic_koizumi_aligned(
+    topics_data: dict[str, list[dict[str, str | int]]],
+    topic_index: int,
+) -> str | None:
+    """
+    トピック定義から koizumi_aligned フィールドを取得する。
+
+    Parameters
+    ----------
+    topics_data : dict
+        トピック定義のYAMLデータ
+    topic_index : int
+        トピックのID（survey配列のインデックスではなくid）
+
+    Returns
+    -------
+    str | None
+        koizumi_aligned フィールドの値（"support" or "oppose"）、未定義の場合はNone
+    """
+    survey = topics_data.get("survey", [])
+    for topic in survey:
+        if topic.get("id") == topic_index:
+            value = topic.get("koizumi_aligned")
+            return str(value) if value is not None else None
+    return None
+
+
+def get_scenario_koizumi_aligned(
+    scenarios_data: dict[str, list[dict[str, str | int]]],
+    scenario_id: int,
+) -> str | None:
+    """
+    シナリオ定義から koizumi_aligned_option フィールドを取得する。
+
+    Parameters
+    ----------
+    scenarios_data : dict
+        シナリオ定義のYAMLデータ
+    scenario_id : int
+        シナリオのID
+
+    Returns
+    -------
+    str | None
+        koizumi_aligned_option フィールドの値（"A" or "B"）、未定義の場合はNone
+    """
+    scenarios = scenarios_data.get("scenarios", [])
+    for scenario in scenarios:
+        if scenario.get("id") == scenario_id:
+            value = scenario.get("koizumi_aligned_option")
+            return str(value) if value is not None else None
+    return None

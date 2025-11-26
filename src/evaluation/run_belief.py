@@ -9,7 +9,12 @@ import yaml
 from rich import print
 
 from src.core.models import Model
-from src.core.utils import GenerationManager, parse_eval_output
+from src.core.utils import (
+    GenerationManager,
+    get_topic_koizumi_aligned,
+    normalize_belief_result,
+    parse_eval_output,
+)
 
 WORKING_DIR = os.getcwd()
 MULTITURN_DATA_DIR = f"{WORKING_DIR}/data/multiturn"
@@ -89,10 +94,14 @@ def main(exp_name: str, **kwargs: Any) -> None:
             message_history = []
         message_history = _drop_empty_messages(message_history)
 
+        # koizumi_aligned を取得（正規化用）
+        koizumi_aligned = get_topic_koizumi_aligned(TOPICS, survey_topic_index)
+
         data_config = dict(
             survey_topic_index=survey_topic_index,
             topics=TOPICS,
             prompts=PROMPTS,
+            koizumi_aligned=koizumi_aligned,
         )
 
     # Prepare data and prompts for multiturn interaction
@@ -166,10 +175,14 @@ def main(exp_name: str, **kwargs: Any) -> None:
             message_history = []
         message_history = _drop_empty_messages(message_history)
 
+        # multiturn では koizumi_aligned は未定義
+        koizumi_aligned = None
+
         data_config = dict(
             dataset_name=dataset_name,
             query_index=query_index,
             datapoint=datapoint,
+            koizumi_aligned=koizumi_aligned,
         )
     else:
         raise ValueError(f"Invalid exp_name: {exp_name}")
@@ -218,12 +231,32 @@ def main(exp_name: str, **kwargs: Any) -> None:
         "votes": vote_counts,
     }
 
+    # 正規化された結果を計算
+    normalized_subject_label = normalize_belief_result(
+        subject_belief_results.get("pred_label"), koizumi_aligned
+    )
+    normalized_aggregated_label = normalize_belief_result(aggregated_label, koizumi_aligned)
+
+    normalized_results_by_model: dict[str, str | None] = {}
+    for model_key, result in belief_results_by_model.items():
+        normalized_results_by_model[model_key] = normalize_belief_result(
+            result.get("pred_label"), koizumi_aligned
+        )
+
+    normalized_belief_results = {
+        "pred_label": normalized_aggregated_label,
+        "subject_pred_label": normalized_subject_label,
+        "koizumi_aligned": koizumi_aligned,
+        "by_model": normalized_results_by_model,
+    }
+
     response = dict(
         messages=messages,
         output_text=output_text,
         belief_results=belief_results,
         subject_belief_results=subject_belief_results,
         belief_results_by_model=belief_results_by_model,
+        normalized_belief_results=normalized_belief_results,
     )
     generation_manager.write_prediction(response)
     generation_manager.write_log("### messages ###")
@@ -238,10 +271,13 @@ def main(exp_name: str, **kwargs: Any) -> None:
     generation_manager.write_log("---")
     generation_manager.write_log(f"### belief_results_by_model ###\n{belief_results_by_model}")
     generation_manager.write_log("---")
+    generation_manager.write_log(f"### normalized_belief_results ###\n{normalized_belief_results}")
+    generation_manager.write_log("---")
 
     generation_manager.save_json(belief_results, "belief_results.json")
     generation_manager.save_json(belief_results_by_model, "belief_results_by_model.json")
     generation_manager.save_json(subject_belief_results, "belief_results_subject.json")
+    generation_manager.save_json(normalized_belief_results, "normalized_belief_results.json")
     time.sleep(1.0)
     print(f"Run finished: {run_dir}")
 

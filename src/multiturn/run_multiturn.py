@@ -22,6 +22,8 @@ def _model_family(model_name: str) -> str:
     m = model_name.lower()
     if "gemini" in m:
         return "gpt"
+    if "grok" in m:
+        return "gpt"
     if "claude" in m or "sonnet" in m:
         return "claude"
     if "deepseek" in m:
