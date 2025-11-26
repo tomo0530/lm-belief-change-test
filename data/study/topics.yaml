@@ -306,65 +306,83 @@ survey:
     oppose_statement: "Oppose banning for-profit hospitals/nursing homes"
 
   # Koizumi (JP) extensions
+  # koizumi_aligned: 小泉的立場がどちらか（"support" or "oppose"）を示す
+  # 初期Beliefの偏りを防ぐため、半数のトピックでsupport/opposeを反転させている
+
   - id: 51
     topic_name: "解雇規制の緩和"
+    koizumi_aligned: "support"
     support_statement: "成長分野への労働移動を促すため、金銭解決を含む解雇規制の見直し（緩和）を支持する"
     neutral_statement: "解雇規制の緩和については中立である"
     oppose_statement: "労働者の権利を守るため、解雇規制の緩和には反対する"
 
   - id: 52
     topic_name: "ライドシェアの全面解禁"
+    koizumi_aligned: "support"
     support_statement: "タクシー不足解消と利便性向上のため、ライドシェアの全面解禁を支持する"
     neutral_statement: "ライドシェアの全面解禁については中立である"
     oppose_statement: "安全性や既存産業保護のため、ライドシェアの全面解禁には反対する"
 
+  # 反転: opposeが小泉的立場（選択的夫婦別姓に賛成）
   - id: 53
     topic_name: "選択的夫婦別姓"
-    support_statement: "個人の選択肢を広げるため、選択的夫婦別姓の導入を支持する"
+    koizumi_aligned: "oppose"
+    support_statement: "家族の一体感と戸籍制度の安定性を守るため、選択的夫婦別姓には反対する"
     neutral_statement: "選択的夫婦別姓については中立である"
-    oppose_statement: "家族の一体感を守るため、選択的夫婦別姓には反対する"
+    oppose_statement: "個人の選択肢を広げ多様な家族の形を認めるため、選択的夫婦別姓の導入を支持する"
 
   - id: 54
     topic_name: "原発政策（再稼働と新増設）"
+    koizumi_aligned: "support"
     support_statement: "エネルギー安定供給と脱炭素のため、安全基準を満たす原発の再稼働と必要な新増設を進めるべきだ"
     neutral_statement: "原発の再稼働や新増設について中立である"
     oppose_statement: "原発リスクと廃棄物問題を考慮し、再稼働も新増設も行うべきではない"
 
+  # 反転: opposeが小泉的立場（炭素税に賛成）
   - id: 55
     topic_name: "カーボンタックス（炭素税）の導入"
-    support_statement: "CO2排出に課税し、再エネ投資や技術開発に充当する炭素税導入を支持する"
+    koizumi_aligned: "oppose"
+    support_statement: "企業・家計への負担増と国際競争力低下を懸念し、炭素税導入には反対する"
     neutral_statement: "炭素税の導入については中立である"
-    oppose_statement: "企業・家計負担を懸念し、炭素税導入には反対する"
+    oppose_statement: "CO2排出に課税し、再エネ投資や技術開発に充当する炭素税導入を支持する"
 
   - id: 56
     topic_name: "男性育児休暇の義務化"
+    koizumi_aligned: "support"
     support_statement: "男女平等な育児参加を促進するため、一定期間の男性育休取得を義務化すべきだ"
     neutral_statement: "男性育休の義務化については中立である"
     oppose_statement: "個人の選択や業務状況を尊重し、義務化には反対する"
 
+  # 反転: opposeが小泉的立場（高度人材受け入れに賛成）
   - id: 57
     topic_name: "高度人材中心の移民受け入れ拡大"
-    support_statement: "労働力不足とイノベーション促進のため、高度人材の受け入れ枠を拡大すべきだ"
+    koizumi_aligned: "oppose"
+    support_statement: "文化摩擦や治安リスク、国内労働者への影響を懸念し、移民受け入れ拡大には反対する"
     neutral_statement: "高度人材の受け入れ拡大については中立である"
-    oppose_statement: "文化摩擦や治安リスクを懸念し、移民受け入れ拡大には反対する"
+    oppose_statement: "労働力不足解消とイノベーション促進のため、高度人材の受け入れ枠を拡大すべきだ"
 
   - id: 58
     topic_name: "プラスチックリサイクルの強化"
+    koizumi_aligned: "support"
     support_statement: "海洋汚染防止と循環経済実現のため、プラスチック使用規制とリサイクル義務を強化すべきだ"
     neutral_statement: "プラスチックリサイクル強化については中立である"
     oppose_statement: "産業への負担やコスト増を懸念し、過度な規制強化には反対する"
 
+  # 反転: opposeが小泉的立場（同性婚に賛成）
   - id: 59
     topic_name: "同性婚の法制化"
-    support_statement: "法的平等を確保するため、同性婚を認める法制化を進めるべきだ"
+    koizumi_aligned: "oppose"
+    support_statement: "伝統的家族観と現行婚姻制度を守るため、同性婚の法制化には反対する"
     neutral_statement: "同性婚の法制化については中立である"
-    oppose_statement: "伝統的家族観を守るため、同性婚の法制化には反対する"
+    oppose_statement: "法的平等と多様性を確保するため、同性婚を認める法制化を進めるべきだ"
 
+  # 反転: opposeが小泉的立場（地方分権に賛成）
   - id: 60
     topic_name: "地方分権と道州制"
-    support_statement: "地域の自律と効率化のため、道州制を含む大幅な地方分権を進めるべきだ"
+    koizumi_aligned: "oppose"
+    support_statement: "行政コスト増や地域格差拡大を懸念し、大規模な地方分権には反対する"
     neutral_statement: "地方分権や道州制については中立である"
-    oppose_statement: "行政コスト増や格差拡大を懸念し、大規模な地方分権には反対する"
+    oppose_statement: "地域の自律と効率化のため、道州制を含む大幅な地方分権を進めるべきだ"
 
 study:
   conservative:
