@@ -1,6 +1,6 @@
 # LM Belief Change - Koizumi Edition
 
-本リポジトリは「Accumulating Context Changes the Beliefs of Language Models」の実験フレームワークを、日本の政治コンテキスト（小泉進次郎）で再現するための環境です。GPT-5.1 / Claude Sonnet 4.5 / Grok-4 を対象に、Stage1/2/3の実験を一括実行できます。
+本リポジトリは「Accumulating Context Changes the Beliefs of Language Models」の実験フレームワークを、日本の政治コンテキスト（小泉進次郎氏）で再現するための環境です。GPT-5.1 / Claude Sonnet 4.5 / Grok-4 を対象に、Stage1/2/3の実験を一括実行できます。
 
 ## 前提環境
 - Python: 3.12（`uv`で管理）
